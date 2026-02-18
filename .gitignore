@@ -1,0 +1,5 @@
+node_modules/
+betblock-extension.zip
+*.log
+.DS_Store
+Thumbs.db
