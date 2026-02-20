@@ -1,0 +1,11 @@
+{
+  "name": "betblock-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome extension to block gambling websites.",
+  "scripts": {
+    "test": "node --experimental-vm-modules tests/run-tests.js",
+    "package": "bash scripts/package.sh"
+  }
+}
