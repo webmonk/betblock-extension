@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetBlock Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <svg class="header-logo" width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="rgba(82,183,136,0.15)" stroke="#52b788" stroke-width="1.5"/>
+          <path d="M9 12l2 2 4-4" stroke="#52b788" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1>BetBlock</h1>
+      </div>
+      <span class="status" id="status-badge">Active</span>
+    </header>
+
+    <!-- Blocking controls -->
+    <section class="card">
+      <div class="card-header">
+        <h2>Blocking</h2>
+      </div>
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-label">Enable blocking</span>
+          <span class="setting-hint">Intercept and redirect gambling sites</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="enabled-toggle" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="setting-divider"></div>
+      <div class="setting-row">
+        <div class="setting-info">
+          <span class="setting-label">Require confirmation to disable</span>
+          <span class="setting-hint">You must type a phrase before blocking can be turned off</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="confirm-toggle" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="card">
+      <div class="card-header">
+        <h2>Statistics</h2>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="stat-value" id="total-blocked">0</span>
+          <span class="stat-label">Sites blocked</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="last-blocked">Never</span>
+          <span class="stat-label">Last blocked</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="default-count">0</span>
+          <span class="stat-label">Default domains</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="custom-count">0</span>
+          <span class="stat-label">Custom domains</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Domains -->
+    <section class="card">
+      <div class="card-header">
+        <h2>Custom Blocked Domains</h2>
+      </div>
+      <div class="add-domain">
+        <div class="input-wrapper">
+          <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <input
+            type="text"
+            id="domain-input"
+            placeholder="e.g. example-gambling.com"
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </div>
+        <button class="btn btn-primary" id="add-domain-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          Add
+        </button>
+      </div>
+      <p class="toast toast-error hidden" id="domain-error"></p>
+      <div class="domain-list" id="domain-list">
+        <p class="empty-state" id="empty-state">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="8" y1="12" x2="16" y2="12"/>
+          </svg>
+          No custom domains added yet
+        </p>
+      </div>
+    </section>
+
+    <!-- Import/Export -->
+    <section class="card">
+      <div class="card-header">
+        <h2>Import / Export</h2>
+      </div>
+      <p class="card-description">Export your custom domain list as JSON, or import from a file.</p>
+      <div class="import-export-actions">
+        <button class="btn btn-outline" id="export-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Export
+        </button>
+        <button class="btn btn-outline" id="import-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          Import
+        </button>
+        <input type="file" id="import-file" accept=".json" class="hidden">
+      </div>
+      <p class="toast toast-error hidden" id="import-error"></p>
+      <p class="toast toast-success hidden" id="import-success"></p>
+    </section>
+
+    <!-- About -->
+    <section class="card card-muted">
+      <p class="about-text">
+        BetBlock blocks access to gambling websites. All data is stored locally. Nothing is sent externally.
+      </p>
+      <p class="about-version">
+        Version <span id="version"></span>
+      </p>
+    </section>
+  </div>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>
