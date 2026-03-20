@@ -1,5 +1,5 @@
 /**
- * Tests for rules.js — rule building logic.
+ * Tests for rules.js - rule building logic.
  * Chrome API calls are not tested here (those require integration testing).
  */
 

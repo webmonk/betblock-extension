@@ -16,6 +16,6 @@
 
   // Record the block event
   chrome.runtime.sendMessage({ type: 'INCREMENT_BLOCK_COUNT' }).catch(() => {
-    // Service worker may not be ready — non-critical, ignore
+    // Service worker may not be ready - non-critical, ignore
   });
 })();

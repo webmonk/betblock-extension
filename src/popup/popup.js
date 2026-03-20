@@ -1,5 +1,5 @@
 /**
- * Popup script — quick toggle and status display.
+ * Popup script - quick toggle and status display.
  */
 
 import { DISABLE_CONFIRMATION_PHRASE, STORAGE_KEYS } from '../shared/constants.js';

@@ -1,6 +1,6 @@
 /**
  * Default list of known gambling domains.
- * Domains only — no protocols, paths, or www prefixes.
+ * Domains only - no protocols, paths, or www prefixes.
  * Keep sorted alphabetically for easy maintenance.
  */
 export const DEFAULT_DOMAINS = [

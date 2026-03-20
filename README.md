@@ -1,6 +1,6 @@
 # BetBlock
 
-A Chrome extension that blocks access to gambling websites. All data stays local — nothing is sent externally.
+A Chrome extension that blocks access to gambling websites. All data stays local - nothing is sent externally.
 
 ## Features
 
