@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \":*)",
+      "Bash(node --experimental-vm-modules tests/run-tests.js)",
+      "Bash(node tests/run-tests.js)"
+    ]
+  }
+}
