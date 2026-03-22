@@ -3,6 +3,8 @@
   "name": "BetBlock",
   "version": "1.0.0",
   "description": "Block access to gambling websites and take control of your browsing habits.",
+  "author": "Isaac Oyelowo",
+  "homepage_url": "https://isaacoyelowo.dev",
   "permissions": [
     "declarativeNetRequest",
     "storage"

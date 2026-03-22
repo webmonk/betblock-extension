@@ -4,6 +4,15 @@
   "private": true,
   "type": "module",
   "description": "Chrome extension to block gambling websites.",
+  "author": {
+    "name": "Isaac Oyelowo",
+    "url": "https://isaacoyelowo.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webmonk/betblock-extension.git"
+  },
   "scripts": {
     "test": "node --experimental-vm-modules tests/run-tests.js",
     "package": "bash scripts/package.sh"
